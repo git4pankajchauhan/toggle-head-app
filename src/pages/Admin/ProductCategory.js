@@ -24,7 +24,7 @@ const ProductCategory = () => {
   const formSubmit = async e => {
     e.preventDefault();
     try {
-      const result = await axios.post('http://localhost:8000/product-category', addCategory);
+      const result = await axios.post('https://toggle-head-api.herokuapp.com/product-category', addCategory);
       setMessage(result.data.message);
       categorysData();
       setTimeout(() => {
@@ -38,7 +38,7 @@ const ProductCategory = () => {
 
   /* Fetch posts From API */
   const categorysData = async () => {
-    const response = await axios.get(`http://localhost:8000/product-category`);
+    const response = await axios.get(`https://toggle-head-api.herokuapp.com/product-category`);
     setCategory(response.data);
   };
   useEffect(() => {

@@ -11,16 +11,16 @@ const Product = () => {
   const [checkedName, setCheckedName] = useState([]);
   /* Get  Category */
   const categorysData = async () => {
-    const response = await axios.get(`http://localhost:8000/product-category`);
+    const response = await axios.get(`https://toggle-head-api.herokuapp.com/product-category`);
     setCategory(response.data);
   };
   /* Get All Product */
   const productData = async (filter = []) => {
     if (filter.length > 0) {
-      const response = await axios.post(`http://localhost:8000/product/filter`, { category_id: filter.join(',') });
+      const response = await axios.post(`https://toggle-head-api.herokuapp.com/product/filter`, { category_id: filter.join(',') });
       setProduct(response.data);
     } else {
-      const response = await axios.get(`http://localhost:8000/product`);
+      const response = await axios.get(`https://toggle-head-api.herokuapp.com/product`);
       setProduct(response.data);
     }
   };

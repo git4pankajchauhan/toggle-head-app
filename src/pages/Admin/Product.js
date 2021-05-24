@@ -29,7 +29,7 @@ const Product = () => {
   const formSubmit = async e => {
     e.preventDefault();
     try {
-      const result = await axios.post('http://localhost:8000/product', addProduct);
+      const result = await axios.post('https://toggle-head-api.herokuapp.com/product', addProduct);
       console.log(result);
       setMessage(result.data.message);
       productData();
@@ -44,12 +44,12 @@ const Product = () => {
 
   /* Get All Dropdown Category */
   const categorysData = async () => {
-    const response = await axios.get(`http://localhost:8000/product-category`);
+    const response = await axios.get(`https://toggle-head-api.herokuapp.com/product-category`);
     setCategory(response.data);
   };
   /* Get All Product */
   const productData = async () => {
-    const response = await axios.get(`http://localhost:8000/product`);
+    const response = await axios.get(`https://toggle-head-api.herokuapp.com/product`);
     setProduct(response.data);
   };
   useEffect(() => {
