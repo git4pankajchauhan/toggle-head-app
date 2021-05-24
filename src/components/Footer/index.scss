@@ -1,0 +1,66 @@
+@import '../../css/var';
+.footer-section {
+  background-image: url(../../images/bg1.png);
+  background-color: $clr-primary-light;
+  // background-size: cover;
+  box-shadow: 0 0px 10px -5px #00000059;
+  padding: 5em 3em 2em;
+  .contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 2em;
+    margin-bottom: 3em;
+    .content-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+      .icon-box {
+        background: rgba(#fff, 0.9);
+        border-radius: 50%;
+        height: 3em;
+        width: 3em;
+        display: grid;
+        place-items: center;
+        svg {
+          fill: $clr-primary;
+          font-size: 2rem;
+        }
+      }
+      .content-box {
+        color: rgba(#fff, 0.9);
+        font-size: 1.2rem;
+        margin: 0;
+        line-height: 1.3;
+      }
+    }
+  }
+  .social-media-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 2em;
+    margin-bottom: 3em;
+    .icon-box {
+      background: rgba(#fff, 0.2);
+      border-radius: 50%;
+      height: 4.5em;
+      width: 4.5em;
+      display: grid;
+      place-items: center;
+      svg {
+        fill: #fff;
+        font-size: 2rem;
+      }
+    }
+  }
+  .foot-content {
+    color: rgba(#fff, 0.7);
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+    span {
+      margin: 0 1em;
+    }
+  }
+}

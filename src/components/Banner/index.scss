@@ -1,0 +1,22 @@
+@import '../../css/var';
+
+.banner-section {
+  height: 500px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  .title {
+    position: absolute;
+    top: calc(70px + 10%);
+    left: 10%;
+    z-index: 1;
+    color: #fff;
+    font-size: 5rem;
+    font-weight: bolder;
+  }
+  .image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,75 @@
+@mixin btn_outline($color, $bg_color) {
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: 0.3rem 1.2rem;
+    text-align: center;
+    position: relative;
+    background: transparent;
+    color: $color;
+    border: 2px solid $color;
+    border-radius: 4.2rem;
+    display: inline-block;
+    outline: none;
+    svg {
+        fill: $color;
+        font-size: 1.4rem;
+        margin-top: -2px;
+        transition: all 0.3s ease-out;
+    }
+    &:hover,
+    &:focus {
+        background: $color;
+        color: $bg_color;
+        transition: all 0.3s ease-out;
+    }
+
+    &:hover svg,
+    &:focus svg {
+        fill: $bg_color;
+    }
+}
+
+@mixin primary_title(
+    $h2_clr,
+    $span_clr,
+    $content_be,
+    $content_af,
+    $icon_bg_clr
+) {
+    font-size: 3.3rem;
+    font-family: $font__1;
+    color: $h2_clr;
+    margin-bottom: 5rem;
+    text-align: center;
+    position: relative;
+    span {
+        font-family: inherit;
+        color: $span_clr;
+    }
+    &::before {
+        content: $content_be;
+        position: absolute;
+        bottom: -1.3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        width: 15rem;
+        background: $span_clr;
+    }
+    &::after {
+        content: $content_af;
+        color: $h2_clr;
+        position: absolute;
+        bottom: -3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $icon_bg_clr;
+        padding: 0 0.3rem;
+    }
+}
+@mixin secondry_title($h3_clr) {
+    font-size: 2rem;
+    font-family: $font__1;
+    color: $h3_clr;
+    font-weight: normal;
+}

@@ -1,0 +1,69 @@
+@import '../../css/var';
+
+.c-drawer-btn {
+  background: transparent;
+  color: #fff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 0.8rem 2rem;
+  border: 2px solid;
+  outline: none;
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    color: #4b79a7;
+  }
+}
+.c-drawer-bg {
+  position: absolute;
+  background: rgba(40, 44, 63, 0.7);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  animation: fadeIn ease 0.5s;
+  .c-drawer-container {
+    padding: 3rem;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 350px;
+    z-index: 1001;
+    animation: slideRight ease-out 0.3s;
+    .c-drawer-head {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
+      svg {
+        font-size: 3rem;
+        margin-right: 0.5rem;
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    right: -200%;
+  }
+  to {
+    opacity: 1;
+    right: 0%;
+  }
+}
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

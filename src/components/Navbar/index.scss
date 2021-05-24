@@ -1,0 +1,196 @@
+@import '../../css/var';
+
+/* Main Navigation Bar */
+.main-navbar {
+  background: #fff;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-out;
+  box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.15);
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  .close-sidebar,
+  .navbar-icon {
+    display: none;
+  }
+  .sidebar {
+    width: 100%;
+    height: inherit;
+  }
+  .sidebar-menu {
+    display: flex;
+    justify-content: space-around;
+    gap: 4rem;
+    align-items: center;
+    height: inherit;
+    .nav-menus {
+      height: inherit;
+      .nav-link {
+        height: inherit;
+      }
+    }
+  }
+  .nav-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    outline: none;
+
+    color: $clr-dark;
+    font-size: 1.3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      width: 90%;
+      height: 2px;
+      background: $clr-primary;
+      transition: all 0.3s ease-out;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+  .active-link {
+    color: $clr-primary !important;
+    &::after {
+      transform: translateX(-50%) scale(1) !important;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .main-navbar {
+    .container {
+      padding: 0 20px;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+  .main-navbar {
+    .close-sidebar,
+    .navbar-icon {
+      display: block;
+      font-size: 3rem;
+      fill: $clr-dark;
+    }
+    .close-sidebar {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      fill: #fff;
+      cursor: pointer;
+    }
+
+    .sidebar {
+      position: absolute;
+      height: unset;
+    }
+
+    .sidebar-fade-in {
+      background-color: rgba(0, 0, 0, 0.4);
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(4px);
+      animation: fadeIn ease 0.5s;
+    }
+    .sidebar-menu {
+      position: fixed;
+      min-height: 100vh;
+      width: 77vw;
+      z-index: 9999;
+      top: 0;
+      left: -120%;
+      transition: all 0.5s;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: #fdfdfd;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0 !important;
+      height: unset;
+
+      .nav-menus {
+        order: 2;
+        width: 100%;
+        .nav-link {
+          display: block;
+          font-size: 1.6rem;
+          border: none;
+          padding: 1.5rem 2.1rem 1.2rem;
+          width: 100%;
+          font-weight: 500;
+          margin: 0;
+          color: $clr-dark;
+          text-align: left;
+
+          &::after {
+            content: unset;
+          }
+        }
+      }
+    }
+    .show-menus {
+      left: 0 !important;
+    }
+    .navbar-icon {
+      display: inline-block;
+    }
+  }
+}
+
+///////////////////////////////////Animation //////////////////////////////////////
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes userFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(0, -10%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}

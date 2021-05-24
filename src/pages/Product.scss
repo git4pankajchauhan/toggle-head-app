@@ -1,0 +1,107 @@
+@import '../css/var';
+
+.product-section {
+  padding: 4em;
+  .filter-box {
+    max-width: 220px;
+    padding: 2em;
+    border-radius: 2em;
+    box-shadow: 0 0 2em 0 $clr-shadow;
+    position: sticky;
+    top: 100px;
+    .head {
+      font-size: 1.4rem;
+      color: $clr-blue;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5em;
+      margin-bottom: 1.5em;
+    }
+    .filter-body {
+      .category-label {
+        font-family: $font__1;
+      }
+    }
+  }
+
+  .product-wrapper {
+    .main-title {
+      text-align: center;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      color: $clr-primary;
+      margin-bottom: 3em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5em;
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 400px;
+        display: inline-block;
+      }
+    }
+    .product_card {
+      max-width: 280px;
+      background: #eee;
+      border-radius: 1rem;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+      height: 100%;
+      margin: 0 auto;
+      img {
+        height: 100px;
+        width: auto;
+      }
+      .title {
+        font-size: 1.6rem;
+        color: #000;
+        font-family: $font__2;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin: 0;
+      }
+      .discription {
+        max-height: 100px;
+        overflow-y: auto;
+        text-align: center;
+        font-size: 1.3rem;
+        margin: 0;
+      }
+      .available {
+        color: $clr-primary-dark;
+        font-size: 1.4rem;
+        font-weight: bold;
+        font-family: $font__1;
+      }
+    }
+  }
+}
+
+/* Checkbox style */
+.checkbox-label {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1em;
+  cursor: pointer;
+  margin-bottom: 1.2em;
+  span {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba($clr-dark, 0.8);
+    font-family: $font__3;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-section {
+    .filter-box {
+      margin: 0 auto;
+    }
+  }
+}
