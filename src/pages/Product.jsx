@@ -56,8 +56,8 @@ const Product = () => {
 
   useEffect(() => {
     productData(checked);
-    console.log(checkedName);
   }, [checked]);
+
   return (
     <>
       <Banner title="Our Product" img_src={b_img} />
@@ -85,7 +85,7 @@ const Product = () => {
             <div className="col-11 col-md-8 mx-auto">
               <div className="product-wrapper">
                 <h2 className="main-title">
-                  <span>{product.length == 0 || checkedName.length != 0 ? checkedName.join(' & ') : 'All'}</span>({product.length} Product)
+                  <span>{product.length === 0 || checkedName.length !== 0 ? checkedName.join(' & ') : 'All'}</span>({product.length} Product)
                 </h2>
                 <div className="conatiner">
                   <div className="row g-5">

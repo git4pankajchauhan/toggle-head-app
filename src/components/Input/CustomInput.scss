@@ -26,11 +26,40 @@
     }
     &:focus ~ label,
     &:valid ~ label {
+      display: unset !important;
       top: 2px;
       left: 14px;
       background: #fff;
       padding: 0 0.6em;
       font-size: 1rem;
+    }
+  }
+  input[type='file'] {
+    color: transparent;
+    padding-right: 7em;
+    &::-webkit-file-upload-button {
+      border: none;
+      color: rgb(160, 159, 159);
+      font-size: 1.2rem;
+      position: absolute;
+      right: -4px;
+      top: 0;
+      bottom: 0;
+      max-width: 100px;
+      padding: 0 1em;
+    }
+    &:focus,
+    &:valid {
+      border: 2px solid rgba($clr-primary, 0.5);
+      border-radius: 3px;
+      background-color: #fff;
+      color: $clr-dark;
+    }
+
+    &:focus::-webkit-file-upload-button,
+    &:valid::-webkit-file-upload-button {
+      color: #fff;
+      background: rgba($clr-primary, 0.5);
     }
   }
   select.input-box {

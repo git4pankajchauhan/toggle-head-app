@@ -1,7 +1,7 @@
 import React from 'react';
 import './CustomInput.scss';
 
-const CustomInput = ({ label, className, ...props }) => {
+const CustomInput = ({ label, className = '', ...props }) => {
   return (
     <div className="input-wrapper">
       <input className={`input-box ${className}`} {...props} required />
@@ -10,7 +10,7 @@ const CustomInput = ({ label, className, ...props }) => {
   );
 };
 
-const CustomTextArea = ({ label, className, ...props }) => {
+const CustomTextArea = ({ label, className = '', ...props }) => {
   return (
     <div className="input-wrapper">
       <textarea className={`input-box ${className}`} {...props} required></textarea>
@@ -19,7 +19,7 @@ const CustomTextArea = ({ label, className, ...props }) => {
   );
 };
 
-const CustomDropdown = ({ label, label_option = true, className, children, ...props }) => {
+const CustomDropdown = ({ label, label_option = true, className = '', children, ...props }) => {
   return (
     <div className="input-wrapper">
       <select className={`input-box ${className}`} {...props} required>

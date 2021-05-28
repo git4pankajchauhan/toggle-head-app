@@ -47,14 +47,26 @@ p {
   font-size: 1.3rem;
 }
 
+/*  */
 .message {
   margin-bottom: 1rem;
   padding: 1.5rem;
-  background: rgba($clr-primary, 0.2);
   border-left: 2px solid;
-  color: $clr-primary;
+  background: rgba($clr-blue, 0.2);
+  color: $clr-blue;
   animation: fadeIn ease 0.5s;
+  font-size: 1.2rem;
 }
+.message.success {
+  background: rgba($clr-primary, 0.2);
+  color: $clr-primary;
+}
+
+.message.danger {
+  background: rgba($clr-danger, 0.2);
+  color: $clr-danger;
+}
+
 .text-wrap {
   max-width: 230px;
   max-height: 60px;
